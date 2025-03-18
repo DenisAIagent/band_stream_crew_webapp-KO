@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Stream Crew IA Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #555;
+        }
+        .error {
+            color: red;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Band Stream Crew IA Agent</h1>
+    
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+    
+    <form action="/campaign" method="post">
+        <div class="form-group">
+            <label for="artist_name">Nom de l'artiste *</label>
+            <input type="text" id="artist_name" name="artist_name" required placeholder="Ex: Gojira">
+        </div>
+        
+        <div class="form-group">
+            <label for="music_style">Style musical</label>
+            <input type="text" id="music_style" name="music_style" placeholder="Ex: metal progressif">
+        </div>
+        
+        <div class="form-group">
+            <label for="song">Chanson</label>
+            <input type="text" id="song" name="song" placeholder="Ex: L'Enfant Sauvage">
+        </div>
+        
+        <div class="form-group">
+            <label for="lyrics">Paroles</label>
+            <textarea id="lyrics" name="lyrics" placeholder="Entrez quelques paroles significatives..."></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="bio">Biographie</label>
+            <textarea id="bio" name="bio" placeholder="Entrez une courte biographie de l'artiste..."></textarea>
+        </div>
+        
+        <button type="submit">Générer la campagne</button>
+    </form>
+</body>
+</html>
