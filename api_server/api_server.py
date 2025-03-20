@@ -60,8 +60,7 @@ def clear_data(key):
     elif key == "optimized_campaign":
         data_store[key] = {}
     
-    return jsonify({"status": "success", "message": f"Data cleared for {key}"}), 200
-
+return jsonify({"status": "success", "message": "Data cleared for {key}"}), 200
 @app.route('/clear_all', methods=['DELETE'])
 def clear_all_data():
     """Efface toutes les données du magasin temporaire"""
